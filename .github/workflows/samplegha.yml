@@ -23,3 +23,13 @@ jobs:
 
     - name: Verify Java version
       run: java -version
+    - name: Install Watchman
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y watchman
+
+    - name: Generate keystore
+      run: |
+        cd packages/openchs-android/android/app
+        keytool -genkeypair -storepass password -storetype PKCS12 -keyalg RSA -keysize 2048 -dname "CN=server" -alias bahmni -ext "SAN:c=DNS:localhost,IP:127.0.0.1" -keystore bahmni-release-key.keystore
+
