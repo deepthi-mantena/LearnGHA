@@ -32,4 +32,5 @@ jobs:
       run: |
         cd packages/openchs-android/android/app
         keytool -genkeypair -storepass password -storetype PKCS12 -keyalg RSA -keysize 2048 -dname "CN=server" -alias bahmni -ext "SAN:c=DNS:localhost,IP:127.0.0.1" -keystore bahmni-release-key.keystore
-
+        export BAHMNI_KEYSTORE_PASSWORD=password
+        export BAHMNI_KEY_PASSWORD=password
