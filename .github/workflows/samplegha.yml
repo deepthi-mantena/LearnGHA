@@ -27,6 +27,12 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install -y watchman
+    - name: List contents of the current directory
+      run: ls
+
+    - name: Find the 'android/app' directory
+      run: find . -type d -name "android/app"
+    
 
     - name: Generate keystore
       run: |
