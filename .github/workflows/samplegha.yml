@@ -14,4 +14,4 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Print a message
-      run: echo "Hello, this is a sample GitHub Actions workflow!"
+      run: echo "Hello, this is a sample GHA workflow!"
